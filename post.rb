@@ -1,4 +1,6 @@
-class Post
+class Post < Model
+  set_table_name "posts"
+
   attr_accessor :id, :title, :body, :user_id
 
   # Initialize a blog post
@@ -7,10 +9,5 @@ class Post
     @title = attrs[:title]
     @body = attrs[:body]
     @user_id = attrs[:user_id]
-  end
-
-  # Factory create method
-  def self.create(attrs)
-    self.new attrs
   end
 end

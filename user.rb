@@ -1,6 +1,8 @@
 # User Class
-class User
+class User < Model
   attr_accessor :id, :first_name, :last_name, :posts
+
+  set_table_name "users"
 
   # Initialize a user with name
   def initialize(attrs = {})
@@ -16,10 +18,5 @@ class User
 
   def to_s
     name
-  end
-
-  # Factory create method
-  def self.create(attrs)
-    User.new attrs
   end
 end

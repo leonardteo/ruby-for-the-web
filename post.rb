@@ -10,4 +10,8 @@ class Post < Model
     @body = attrs[:body]
     @user_id = attrs[:user_id]
   end
+
+  def user
+    User.find @user_id
+  end
 end
